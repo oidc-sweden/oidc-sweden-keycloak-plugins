@@ -4,7 +4,7 @@
 
 Keycloak Plugin(s) for functionality defined by OIDC Sweden.
 
---
+----
 
 ## About
 
@@ -228,6 +228,6 @@ Returns:
 No authentication required. Use to verify the plugin is loaded and active.
 
 
---
+----
 
 Copyright &copy; [The Swedish OpenID Connect Working Group (OIDC Sweden)](https://www.oidc.se), 2026. All Rights Reserved.
