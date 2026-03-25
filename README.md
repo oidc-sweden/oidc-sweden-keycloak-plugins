@@ -2,6 +2,10 @@
 
 # Keycloak Plugins
 
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Maven Central](https://img.shields.io/maven-central/v/se.oidc.keycloak/oidc-sweden-keycloak-plugins-parent.svg)](https://central.sonatype.com/artifact/se.oidc.keycloak/oidc-sweden-keycloak-plugins-parent)
+
 Keycloak Plugin(s) for functionality defined by OIDC Sweden.
 
 ----
@@ -10,10 +14,20 @@ Keycloak Plugin(s) for functionality defined by OIDC Sweden.
 
 This repository contain Keycloak plugin(s) that adds functionality defined in [Swedish OpenID Connect Specifications](https://www.oidc.se/specifications/).
 
+## Distribution
+
+The Keycloak plugin(s) are distributed via [Maven central](https://central.sonatype.com).
+
 <a name="oidc-sweden-claims-plugin"></a>
 ## OIDC Sweden Claims Plugin
 
 A Keycloak plugin that implements the [Swedish OIDC Claims and Scopes Specification 1.0](https://www.oidc.se/specifications/swedish-oidc-claims-specification-1_0.html). It targets Keycloak 26.x and provides two protocol mappers, automatic registration of OIDC Sweden user profile attributes, and automatic registration of the three OIDC Sweden client scopes in every realm. Deploying the JAR is sufficient — no manual Admin Console configuration is needed for scopes and attributes.
+
+### Artifact
+
+**GroupID**: `se.oidc.keycloak`
+
+**ArtifactID**: `oidc-sweden-claims-plugin`
 
 <a name="cp-what-the-plugin-does"></a>
 ### What the plugin does

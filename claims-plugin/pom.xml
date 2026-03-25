@@ -5,7 +5,7 @@
 
   <parent>
     <groupId>se.oidc.keycloak</groupId>
-    <artifactId>oidc-sweden-keycloak-plugins</artifactId>
+    <artifactId>oidc-sweden-keycloak-plugins-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
