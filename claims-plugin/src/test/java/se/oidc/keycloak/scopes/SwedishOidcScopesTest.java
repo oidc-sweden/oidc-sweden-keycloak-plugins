@@ -57,8 +57,8 @@ class SwedishOidcScopesTest {
     final SwedishOidcScopes.ScopeDefinition naturalPersonOrgId = SwedishOidcScopes.all().get(2);
 
     assertEquals("natural-person-info-mapper", naturalPersonInfo.mapperProviderId());
-    assertEquals("swedish-oidc-claims-mapper", naturalPersonNumber.mapperProviderId());
-    assertEquals("swedish-oidc-claims-mapper", naturalPersonOrgId.mapperProviderId());
+    assertEquals("oidc-sweden-claims-mapper", naturalPersonNumber.mapperProviderId());
+    assertEquals("oidc-sweden-claims-mapper", naturalPersonOrgId.mapperProviderId());
   }
 
   // --- all(): descriptions not blank ---

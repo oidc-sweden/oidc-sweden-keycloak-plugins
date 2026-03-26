@@ -84,6 +84,10 @@ public class OidcSwedenEventListenerProvider implements EventListenerProvider {
       log.warn("OIDC Sweden plugin: received REALM CREATE event with no resource path — skipping");
       return;
     }
+    if ("master".equals(realmName)) {
+      log.debugf("OIDC Sweden plugin: ignoring REALM CREATE event for master realm");
+      return;
+    }
 
     final RealmModel realm = session.realms().getRealmByName(realmName);
     if (realm == null) {

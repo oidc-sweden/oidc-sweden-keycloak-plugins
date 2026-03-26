@@ -83,7 +83,7 @@ class SwedishOidcClaimsMapperTest {
 
   @Test
   void getId_returnsCorrectProviderId() {
-    assertEquals("swedish-oidc-claims-mapper", this.mapper.getId());
+    assertEquals("oidc-sweden-claims-mapper", this.mapper.getId());
   }
 
   @Test

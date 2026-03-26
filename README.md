@@ -162,7 +162,7 @@ Authentication-event claims (`userSignature`, `credentialValidFrom`, `credential
 <a name="cp-swedishoidcclaimsmapper"></a>
 #### SwedishOidcClaimsMapper
 
-**Provider ID**: `swedish-oidc-claims-mapper`
+**Provider ID**: `oidc-sweden-claims-mapper`
 
 **Display type**: `OIDC Sweden`
 

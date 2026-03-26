@@ -64,13 +64,13 @@ public final class SwedishOidcScopes {
             NATURAL_PERSON_NUMBER,
             "Swedish personal identity number or coordination number",
             SwedishOidcClaimsMapper.PROVIDER_ID,
-            "swedish-oidc-claims-mapper"),
+            "oidc-sweden-claims-mapper"),
 
         new ScopeDefinition(
             NATURAL_PERSON_ORG_ID,
             "Swedish organizational identity (orgAffiliation, orgName, orgNumber, orgUnit)",
             SwedishOidcClaimsMapper.PROVIDER_ID,
-            "swedish-oidc-claims-mapper")
+            "oidc-sweden-claims-mapper")
     );
   }
 

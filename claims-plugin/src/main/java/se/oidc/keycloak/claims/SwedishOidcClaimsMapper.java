@@ -45,7 +45,7 @@ public final class SwedishOidcClaimsMapper extends AbstractOIDCProtocolMapper
     implements ProtocolMapper, OIDCAccessTokenMapper, OIDCIDTokenMapper, UserInfoTokenMapper {
 
   /** The SPI provider ID used to register this mapper with Keycloak. */
-  public static final String PROVIDER_ID = "swedish-oidc-claims-mapper";
+  public static final String PROVIDER_ID = "oidc-sweden-claims-mapper";
 
   private static final String SCOPE_NATURAL_PERSON_INFO =
       "https://id.oidc.se/scope/naturalPersonInfo";

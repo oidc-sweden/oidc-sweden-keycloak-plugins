@@ -41,6 +41,8 @@ public final class OidcSwedenRealmSetup {
 
   private static final Logger log = Logger.getLogger(OidcSwedenRealmSetup.class);
 
+  private static final String MASTER_REALM = "master";
+
   private OidcSwedenRealmSetup() {
   }
 
@@ -50,10 +52,17 @@ public final class OidcSwedenRealmSetup {
    * untouched. Calls {@code UserProfileProvider.setConfiguration()} only if at least one
    * group or attribute was added.
    *
+   * <p>The {@code master} realm is always skipped.</p>
+   *
    * @param session the active Keycloak session
    * @param realm the realm to configure
    */
   public static void ensureAttributes(final KeycloakSession session, final RealmModel realm) {
+    if (MASTER_REALM.equals(realm.getName())) {
+      log.debugf("Realm '%s': skipping OIDC Sweden attribute setup — master realm is excluded",
+          realm.getName());
+      return;
+    }
     session.getContext().setRealm(realm);
     final UserProfileProvider upp = session.getProvider(UserProfileProvider.class);
     final UPConfig config = upp.getConfiguration();
@@ -102,10 +111,17 @@ public final class OidcSwedenRealmSetup {
    * Ensures all three OIDC Sweden client scopes are registered in the given realm, each
    * with its mapper attached. Scopes already present (matched by name) are left untouched.
    *
+   * <p>The {@code master} realm is always skipped.</p>
+   *
    * @param session the active Keycloak session
    * @param realm the realm to configure
    */
   public static void ensureScopes(final KeycloakSession session, final RealmModel realm) {
+    if (MASTER_REALM.equals(realm.getName())) {
+      log.debugf("Realm '%s': skipping OIDC Sweden scope setup — master realm is excluded",
+          realm.getName());
+      return;
+    }
     for (final SwedishOidcScopes.ScopeDefinition def : SwedishOidcScopes.all()) {
       final boolean exists = realm.getClientScopesStream()
           .anyMatch(s -> def.name().equals(s.getName()));
