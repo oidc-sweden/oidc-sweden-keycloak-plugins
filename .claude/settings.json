@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn:*)",
+      "Bash(ls:*)",
+      "Bash(ls)",
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(javap:*)",
+      "Bash(jar:*)"
+    ]
+  }
+}
