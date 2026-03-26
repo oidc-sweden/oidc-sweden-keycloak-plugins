@@ -57,14 +57,21 @@ public class OidcSwedenRealmResourceProviderFactory implements RealmResourceProv
   @Override
   public void postInit(final KeycloakSessionFactory factory) {
     log.info("OIDC Sweden plugin: running startup realm setup");
-    KeycloakModelUtils.runJobInTransaction(factory, session ->
-        session.realms().getRealmsStream().forEach(realm -> {
-          log.debugf("Processing realm '%s'", realm.getName());
-          OidcSwedenRealmSetup.ensureAttributes(session, realm);
-          OidcSwedenRealmSetup.ensureScopes(session, realm);
-        })
-    );
-    log.info("OIDC Sweden plugin: startup realm setup complete");
+    try {
+      KeycloakModelUtils.runJobInTransaction(factory, session ->
+          session.realms().getRealmsStream().forEach(realm -> {
+            log.debugf("Processing realm '%s'", realm.getName());
+            OidcSwedenRealmSetup.ensureAttributes(session, realm);
+            OidcSwedenRealmSetup.ensureScopes(session, realm);
+          })
+      );
+      log.info("OIDC Sweden plugin: startup realm setup complete");
+    }
+    catch (Exception e) {
+      log.warnf("OIDC Sweden plugin: startup realm setup skipped — database not yet " +
+          "available (%s). Existing realms will be configured on next restart.",
+          e.getMessage());
+    }
   }
 
   @Override

@@ -5,7 +5,7 @@
 
   <groupId>se.oidc.keycloak</groupId>
   <artifactId>oidc-sweden-keycloak-plugins-parent</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>OIDC Sweden :: Keycloak Plugins :: Parent POM</name>
