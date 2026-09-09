@@ -72,7 +72,7 @@ public final class NaturalPersonInfoMapper extends AbstractOIDCProtocolMapper
 
   @Override
   public String getDisplayType() {
-    return "OIDC Sweden — Natural Person Info";
+    return "OIDC Sweden: Natural Person Info";
   }
 
   @Override

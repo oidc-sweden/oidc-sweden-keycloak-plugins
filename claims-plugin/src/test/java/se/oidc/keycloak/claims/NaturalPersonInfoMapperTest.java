@@ -69,7 +69,7 @@ class NaturalPersonInfoMapperTest {
 
   @Test
   void getDisplayType_returnsCorrectLabel() {
-    assertEquals("OIDC Sweden — Natural Person Info", this.mapper.getDisplayType());
+    assertEquals("OIDC Sweden: Natural Person Info", this.mapper.getDisplayType());
   }
 
   @Test

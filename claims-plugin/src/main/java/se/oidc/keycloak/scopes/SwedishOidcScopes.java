@@ -23,6 +23,10 @@ import java.util.List;
 /**
  * Defines the OIDC Sweden client scopes and their mapper associations.
  *
+ * <p>This class is the single source of these definitions. It feeds the plugin's info endpoint, the tests, the
+ * documentation and the example registration script. The plugin itself never creates these scopes in a realm;
+ * registering them is the operator's task, see the {@code README} and {@code scripts/register-oidc-sweden.sh}.</p>
+ *
  * <p>Three scopes are defined per the Swedish OIDC Claims and Scopes Specification 1.0:</p>
  * <ul>
  *   <li>{@code https://id.oidc.se/scope/naturalPersonInfo}</li>
@@ -48,7 +52,7 @@ public final class SwedishOidcScopes {
   }
 
   /**
-   * Returns the full list of scope definitions to register.
+   * Returns the full list of scope definitions that an operator is expected to register.
    *
    * @return an unmodifiable list of all three {@link ScopeDefinition} instances
    */

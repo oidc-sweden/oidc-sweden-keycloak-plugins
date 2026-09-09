@@ -23,14 +23,17 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Defines the OIDC Sweden user profile attributes and attribute groups that are registered in Keycloak realms by the
- * OIDC Sweden plugin.
+ * Defines the OIDC Sweden user profile attributes and attribute groups.
+ *
+ * <p>This class is the single source of these definitions. It feeds the plugin's info endpoint, the tests, the
+ * documentation and the example registration script. The plugin itself never writes them into a realm; registering
+ * them is the operator's task, see the {@code README} and {@code scripts/register-oidc-sweden.sh}.</p>
  *
  * <p>Attributes are organized into two named groups that appear as labeled sections in the
  * Keycloak Admin Console user profile editor:</p>
  * <ul>
- *   <li>{@value #GROUP_NATURAL_PERSON} — Swedish personal and coordination number attributes</li>
- *   <li>{@value #GROUP_ORG_ID} — Swedish organizational identity attributes</li>
+ *   <li>{@value #GROUP_NATURAL_PERSON}: Swedish personal and coordination number attributes</li>
+ *   <li>{@value #GROUP_ORG_ID}: Swedish organizational identity attributes</li>
  * </ul>
  *
  * <p>
@@ -40,7 +43,7 @@ import java.util.Set;
  * <p>
  * Authentication-event claims ({@code userSignature}, {@code credentialValidFrom},
  * {@code credentialValidTo}, {@code deviceIp}, {@code authnEvidence}, {@code authnProvider},
- * {@code userCertificate}) are not registered as user profile attributes — they are produced
+ * {@code userCertificate}) are not registered as user profile attributes. They are produced
  * by the authentication process and are not stored as persistent user properties.
  * </p>
  */
@@ -56,7 +59,7 @@ public final class SwedishOidcAttributes {
   }
 
   /**
-   * Returns the full list of OIDC Sweden user profile attributes to register.
+   * Returns the full list of OIDC Sweden user profile attributes that an operator is expected to register.
    *
    * @return an unmodifiable list of all OIDC Sweden {@link UPAttribute} instances
    */
@@ -90,7 +93,7 @@ public final class SwedishOidcAttributes {
   }
 
   /**
-   * Returns the two OIDC Sweden attribute groups to register in the realm's user profile schema. These must be
+   * Returns the two OIDC Sweden attribute groups belonging to the realm's user profile schema. These must be
    * registered before any attributes that reference them by name.
    *
    * @return a list of the two OIDC Sweden {@link UPGroup} instances
@@ -98,11 +101,11 @@ public final class SwedishOidcAttributes {
   public static List<UPGroup> groups() {
     return List.of(
         group(GROUP_NATURAL_PERSON,
-            "OIDC Sweden — Natural Person",
+            "OIDC Sweden: Natural Person",
             "Swedish personal identity number and coordination number attributes "
                 + "per the Swedish OIDC Claims Specification."),
         group(GROUP_ORG_ID,
-            "OIDC Sweden — Organisational Identity",
+            "OIDC Sweden: Organisational Identity",
             "Swedish organisational identity attributes "
                 + "per the Swedish OIDC Claims Specification.")
     );
