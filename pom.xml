@@ -5,7 +5,7 @@
 
   <groupId>se.oidc.keycloak</groupId>
   <artifactId>oidc-sweden-keycloak-plugins-parent</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>OIDC Sweden :: Keycloak Plugins :: Parent POM</name>
@@ -40,7 +40,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>21</java.version>
-    <keycloak.version>26.2.5</keycloak.version>
+    <keycloak.version>26.7.3</keycloak.version>
   </properties>
 
   <repositories>
